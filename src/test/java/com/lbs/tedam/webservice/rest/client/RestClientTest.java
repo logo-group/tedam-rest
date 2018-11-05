@@ -17,15 +17,22 @@
 
 package com.lbs.tedam.webservice.rest.client;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertNotNull;
+
+import org.junit.Before;
+import org.junit.Test;
 
 public class RestClientTest {
 
+	private RestClient restClient;
+
+	@Before
+	public void beforeTest() {
+		restClient = new RestClient();
+	}
+
     @Test
-    public void testPostValue() {
-        RestClient restClient = new RestClient();
+	public void getValue() {
         String url = "http://localhost:9080/TedamManager/api/ScriptRestService/getSnapshotValueList/";
         String value = restClient.getValue(url, "37");
         assertNotNull(value);
