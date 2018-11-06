@@ -1,0 +1,10 @@
+dist: trusty
+language: java
+sudo: false
+addons:
+  sonarcloud:
+    organization: "logobusinesssolutions-github"
+    token:
+      secure: "Bd8MiB2KkZqX/VoXPN0t9LRIPwxR4umdQxccD9mf5aIYqYj6ul1N0ZiwakMOd39xw9QhU8oukQod4Bvv3pauTF3Ofkvevu0QFiRdV5FOYiiDPVLmfeU+Hw1/yI4V4tlX9BL3AweX4+keFJhxVks8ZkG91UZmYFuIpWpaa054Y2EgQM1MNq7ecJB4R5YhgyCiP20c3Tvmdw6/Kb7867TD2H/fxnHdo4JX6jxMRPvl900RzNHfe7y+MlC9P5pPg29CLzyBIdYdYXywkZomnSWxAAiMiaKqdIhiJvdfapgiPZX4cfYGtlLJyB1WEkDO44IjqibqxoOFxmmici5eA1/jXamDHUOA7qDWd4AEXF5rqUARySPR1tld0OigsXqquE6iTL5uAndySadyHStk9E1h5dQ9m/pqY4o9gIl/Ha3lhpmTzclqwOqRYqe5ZPbTU3lCvuLT6KWJ5G5ZjPfIcWIJT+yVNjmSTSqv9Y1QiODpq/VJ5GRu372eMTh1wPrNVv0tIKvXKjbPnuxJbrYU8gjVvSK0g+9Dd8O854KGaTh7TywAGrcup3bD78zh9N5EElxAJGkyCd3tBfgeddbPX9fx1KpDcSCws/1jfngHC3NgnrS02R/YVkaVRtBA2zMtpel277ssXk+LjP4StQmND6gKK0FggY2EEGC5hCIZC2WJrPs="
+script:
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -DskipTests
